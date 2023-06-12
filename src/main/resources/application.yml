@@ -1,0 +1,36 @@
+server:
+   port: 8101
+spring:
+   application:
+      name: cost-center-batch-job
+   datasource:
+      url: jdbc:mysql://localhost:3306/itemmaster
+      username:
+      password:
+      driverClassName: com.mysql.jdbc.Driver
+   jpa:
+      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      generate-ddl: true
+      hibernate.ddl-auto: update
+      
+---
+spring:
+   profiles: dev
+   datasource:
+      url: jdbc:mysql://localhost:3306/itemmaster
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+   jpa:
+      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      generate-ddl: true
+      hibernate.ddl-auto: update
+                 
+---
+spring:
+   profiles:
+      active: dev      
+         
+           
+
+      
